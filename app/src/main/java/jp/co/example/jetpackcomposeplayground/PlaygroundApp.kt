@@ -17,6 +17,8 @@ enum class Screen(val route: String) {
     Lesson1("lesson 1 - Button"),
     Lesson2("Lesson 2 - Snackbar"),
     Lesson3("Lesson 3 - Scaffold"),
+    Lesson4_1("Lesson 4_1 - AlertDialog"),
+    Lesson4_2("Lesson 4_2 - AlertDialog with Scaffold"),
 }
 
 
@@ -40,6 +42,8 @@ fun PlaygroundApp() {
                     Screen.Lesson1      to "Button Sample",
                     Screen.Lesson2      to "Snackbar Sample",
                     Screen.Lesson3      to "Scaffold Sample",
+                    Screen.Lesson4_1    to "AlertDialog Sample1",
+                    Screen.Lesson4_2    to "AlertDialog Sample2 (Scaffold)",
                 )
 
                 MenuScreen(items) { route ->
@@ -59,6 +63,13 @@ fun PlaygroundApp() {
             //Lesson 3
             composable(Screen.Lesson3.route) {
                 jp.co.example.jetpackcomposeplayground.lessons.lesson03.ScaffoldScreen()
+            }
+            //Lesson 4
+            composable(Screen.Lesson4_1.route) {
+                jp.co.example.jetpackcomposeplayground.lessons.lesson04.AlertDialogScreen()
+            }
+            composable(Screen.Lesson4_2.route) {
+                jp.co.example.jetpackcomposeplayground.lessons.lesson04.AlertDialogWithScaffoldScreen()
             }
         }
     }
