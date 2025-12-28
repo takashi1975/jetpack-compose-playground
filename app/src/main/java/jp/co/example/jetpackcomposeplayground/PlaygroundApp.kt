@@ -14,8 +14,9 @@ import androidx.navigation.compose.rememberNavController
 enum class Screen(val route: String) {
     Menu("menu"),
     //TODO: 1.レッスン名
-    Lesson01("lesson 01"),
-    Lesson02("Lesson 02"),
+    Lesson01("lesson 01 - Button"),
+    Lesson02("Lesson 02 - Snackbar"),
+    Lesson03("Lesson 03 - Scaffold")
 }
 
 
@@ -38,6 +39,7 @@ fun PlaygroundApp() {
                 val items = listOf(
                     "Button Sample"     to Screen.Lesson01,
                     "Snackbar Sample"   to Screen.Lesson02,
+                    "Scaffold Sample"   to Screen.Lesson03,
                 )
 
                 MenuScreen(items) { route ->
@@ -46,13 +48,17 @@ fun PlaygroundApp() {
             }
 
             //TODO: 3.レッスンへの遷移
-
+            //Lesson01
             composable(Screen.Lesson01.route) {
                 jp.co.example.jetpackcomposeplayground.lessons.lesson01.ButtonCounterScreen()
             }
-
+            //Lesson02
             composable(Screen.Lesson02.route) {
                 jp.co.example.jetpackcomposeplayground.lessons.lesson02.SnackbarScreen()
+            }
+            //Lesson03
+            composable(Screen.Lesson03.route) {
+                jp.co.example.jetpackcomposeplayground.lessons.lesson03.ScaffoldScreen()
             }
         }
     }
