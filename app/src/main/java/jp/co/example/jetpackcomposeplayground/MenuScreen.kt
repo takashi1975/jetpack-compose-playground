@@ -15,11 +15,11 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun MenuScreen(
-    items: List<Pair<String, Screen>>,
+    items: List<Pair<Screen, String>>,
     onSelect: (String) -> Unit,
 ) {
     LazyColumn {
-        items(items) { (label, route) ->
+        items(items) { (route, label) ->
             ListItem(
                 headlineContent = { Text(label) },
                 modifier = Modifier
