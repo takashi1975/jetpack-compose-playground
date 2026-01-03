@@ -19,7 +19,10 @@ enum class Screen(val route: String) {
     Lesson3("Lesson 3 - Scaffold"),
     Lesson4_1("Lesson 4-1 - AlertDialog"),
     Lesson4_2("Lesson 4-2 - AlertDialog with Scaffold"),
-    Lesson4_3("Lesson 4-3 - AlertDialog with Snackbar")
+    Lesson4_3("Lesson 4-3 - AlertDialog with Snackbar"),
+    Lesson5_1("Lesson 5-1 - TextField Basics"),
+    Lesson5_2("Lesson 5-2 - TextField Examples"),
+    Lesson5_3("Lesson 5-3 - TextField Email Sample"),
 }
 
 
@@ -46,6 +49,9 @@ fun PlaygroundApp() {
                     Screen.Lesson4_1    to "AlertDialog Sample1",
                     Screen.Lesson4_2    to "AlertDialog Sample2 (Scaffold)",
                     Screen.Lesson4_3    to "AlertDialog Sample3 (Snackbar)",
+                    Screen.Lesson5_1    to "TextField Sample1 (Basics)",
+                    Screen.Lesson5_2    to "TextField Sample2 (Examples)",
+                    Screen.Lesson5_3    to "TextField Sample3 (Email)",
                 )
 
                 MenuScreen(items) { route ->
@@ -75,6 +81,16 @@ fun PlaygroundApp() {
             }
             composable(Screen.Lesson4_3.route) {
                 jp.co.example.jetpackcomposeplayground.lessons.lesson04.AlertDialogWithSnackbar()
+            }
+            //Lesson 5
+            composable(Screen.Lesson5_1.route) {
+                jp.co.example.jetpackcomposeplayground.lessons.lesson05.TextFieldBasicsScreen()
+            }
+            composable(Screen.Lesson5_2.route) {
+                jp.co.example.jetpackcomposeplayground.lessons.lesson05.TextFieldExamplesScreen()
+            }
+            composable(Screen.Lesson5_3.route) {
+                jp.co.example.jetpackcomposeplayground.lessons.lesson05.TextFieldEmailScreen()
             }
         }
     }
