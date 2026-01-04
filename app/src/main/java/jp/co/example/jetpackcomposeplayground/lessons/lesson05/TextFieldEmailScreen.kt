@@ -1,5 +1,6 @@
 package jp.co.example.jetpackcomposeplayground.lessons.lesson05
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -19,6 +20,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.dp
 
 
 /**
@@ -82,8 +84,10 @@ fun TextFieldEmailScreen() {
         },
 
         //フォーカスの状態
-        modifier = Modifier.onFocusChanged { focusState ->
-            hasFocus = focusState.isFocused
-        }
+        modifier = Modifier
+            .padding(8.dp)
+            .onFocusChanged { focusState ->
+                hasFocus = focusState.isFocused
+            },
     )
 }

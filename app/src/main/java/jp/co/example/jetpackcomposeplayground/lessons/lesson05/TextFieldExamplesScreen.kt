@@ -48,7 +48,7 @@ fun TextFieldExamplesScreen() {
     ) { padding ->
 
         Column(
-            modifier = Modifier.padding(paddingValues = padding),
+            modifier = Modifier.padding(8.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
 
