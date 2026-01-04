@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
@@ -36,7 +37,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun TextFieldEmailScreen() {
 
-    var email by remember { mutableStateOf("") }
+    var email by rememberSaveable { mutableStateOf("") }
     var hasFocus by remember { mutableStateOf(false) }
 
     val EMAIL_REGEX = Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")

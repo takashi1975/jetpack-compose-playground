@@ -15,6 +15,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -34,10 +35,10 @@ fun TextFieldExamplesScreen() {
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
-    var text1 by remember { mutableStateOf("") }
-    var text2 by remember { mutableStateOf("") }
-    var text3 by remember { mutableStateOf("") }
-    var text4 by remember { mutableStateOf("") }
+    var text1 by rememberSaveable { mutableStateOf("") }
+    var text2 by rememberSaveable { mutableStateOf("") }
+    var text3 by rememberSaveable { mutableStateOf("") }
+    var text4 by rememberSaveable { mutableStateOf("") }
 
     var keyboardController = LocalSoftwareKeyboardController.current
 

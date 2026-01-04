@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -14,7 +15,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -25,7 +26,8 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun TextFieldBasicsScreen() {
-    var text by remember { mutableStateOf("") }
+    var text by rememberSaveable { mutableStateOf("") }
+    val textFieldState = rememberTextFieldState("test")
 
     Column(
         modifier = Modifier
@@ -68,6 +70,19 @@ fun TextFieldBasicsScreen() {
             BasicTextField(
                 value = text,
                 onValueChange = { text = it },
+                modifier = Modifier.border(
+                    width = 1.dp,
+                    color = MaterialTheme.colorScheme.outline,
+                )
+            )
+        }
+
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Text("BasicTextField\n(by state)", modifier = titleModifier)
+            BasicTextField(
+                state = textFieldState,
                 modifier = Modifier.border(
                     width = 1.dp,
                     color = MaterialTheme.colorScheme.outline,
