@@ -24,6 +24,7 @@ enum class Screen(val route: String) {
     Lesson5_2("Lesson 5-2 - TextField Examples"),
     Lesson5_3("Lesson 5-3 - TextField Email Sample"),
     Lesson6("lesson 6 - WebView (AndroidView)"),
+    Lesson7("Lesson 7 - Coil Sample")
 }
 
 
@@ -54,6 +55,7 @@ fun PlaygroundApp() {
                     Screen.Lesson5_2    to "TextField Sample2 (Examples)",
                     Screen.Lesson5_3    to "TextField Sample3 (Email)",
                     Screen.Lesson6      to "WebView Sample",
+                    Screen.Lesson7      to "Coil Sample",
                 )
 
                 MenuScreen(items) { route ->
@@ -98,6 +100,11 @@ fun PlaygroundApp() {
             composable(Screen.Lesson6.route) {
                 val url = "https://www.google.com"
                 jp.co.example.jetpackcomposeplayground.lessons.lesson06.WebViewScreen(url)
+            }
+            //Lesson 7
+            composable(Screen.Lesson7.route) {
+                val url = "https://picsum.photos/200/300"
+                jp.co.example.jetpackcomposeplayground.lessons.lesson07.CoilScreen(imageUrl = url)
             }
         }
     }
